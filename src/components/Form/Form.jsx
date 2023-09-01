@@ -1,5 +1,6 @@
 import "./Form.css"
 import TextForm from "../TextForm";
+import ListaOpciones from "../ListaOpciones";
 
 const Form = () => {
     return <section className="form">
@@ -8,6 +9,7 @@ const Form = () => {
             <TextForm title = "Nombre" placeholder = "Ingresar nombre"/>
             <TextForm title = "Puesto" placeholder = "Ingresar puesto"/>
             <TextForm title = "Foto" placeholder = "Ingresar enlace de foto"/>
+            <ListaOpciones />
         </form>
         </section>
 }
