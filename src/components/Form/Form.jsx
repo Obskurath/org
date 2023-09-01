@@ -7,7 +7,6 @@ const Form = () => {
 
     const manejarEnvio = (e) => {
         e.preventDefault()
-        console.log("Manejar el envio", e)
     };
 
     return <section className="form">
