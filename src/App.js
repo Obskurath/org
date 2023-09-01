@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
-// console.log(header)
+console.log(Header)
 function App() {
   let suma = 3 + 8
   return (
