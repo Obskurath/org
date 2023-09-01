@@ -4,16 +4,22 @@ import ListaOpciones from "../ListaOpciones";
 import Boton from "../Boton";
 
 const Form = () => {
+
+    const manejarEnvio = (e) => {
+        e.preventDefault()
+        console.log("Manejar el envio", e)
+    };
+
     return <section className="form">
-        <form action="">
+        <form onSubmit={manejarEnvio}>
             <h2>Rellena el formulario para crear el colaborador</h2>
-            <TextForm title = "Nombre" placeholder = "Ingresar nombre"/>
-            <TextForm title = "Puesto" placeholder = "Ingresar puesto"/>
-            <TextForm title = "Foto" placeholder = "Ingresar enlace de foto"/>
+            <TextForm title="Nombre" placeholder="Ingresar nombre" required/>
+            <TextForm title="Puesto" placeholder="Ingresar puesto" required/>
+            <TextForm title="Foto" placeholder="Ingresar enlace de foto" required/>
             <ListaOpciones />
             <Boton>Crear</Boton>
         </form>
-        </section>
-}
+    </section>
+};
 
 export default Form;
