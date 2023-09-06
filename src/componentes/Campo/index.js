@@ -1,12 +1,13 @@
 import { useState } from "react"
 import "./Campo.css"
+import { type } from "@testing-library/user-event/dist/type"
 
 const Campo = (props) => {
     const placeholderModificado = `${props.placeholder}...`
 
-    //Destructuracion 
-    const { type = "text" } = props
-
+    //Destructuración
+    const {type = "text"} = props
+    
     const manejarCambio = (e) => {
         props.actualizarValor(e.target.value)
     }
@@ -23,4 +24,4 @@ const Campo = (props) => {
     </div>
 }
 
-export default Campo
+export default Campo;
