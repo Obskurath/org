@@ -1,9 +1,6 @@
 import "./OptionList.css";
 
 const OptionList = () => {
-  // Map => arreglo.map ((team, index) => {
-  //
-  // })
   const teams = [
     "Programación",
     "Front End",
@@ -13,8 +10,6 @@ const OptionList = () => {
     "Móvil",
     "Innovación y Gestión",
   ];
-
-  console.log(teams);
 
   return (
     <div className="option-list">
