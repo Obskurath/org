@@ -1,0 +1,12 @@
+.form-container {
+    opacity: 1;
+    max-height: 1000px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.form-container.hide {
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+}
