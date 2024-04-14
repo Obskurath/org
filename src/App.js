@@ -15,6 +15,36 @@ function App() {
       name: "Eduardo Valencia",
       job: "Estudiante",
     },
+    {
+      team: "Front End",
+      photo: "https://github.com/harlandlohora.png",
+      name: "Harland Lohora",
+      job: "Instructor",
+    },
+    {
+      team: "Programación",
+      photo: "https://github.com/JeanmarieAluraLatam.png",
+      name: "Jean Marie",
+      job: "Desarrolladora de software e instructora",
+    },
+    {
+      team: "UX y Diseño",
+      photo: "https://github.com/JeanmarieAluraLatam.png",
+      name: "Jeanmarie Quijada",
+      job: "Instructora en Alura Latam",
+    },
+    {
+      team: "Programación",
+      photo: "https://github.com/christianpva.png",
+      name: "Christian Velasco",
+      job: "Head de Alura e Instructor",
+    },
+    {
+      team: "Innovación y Gestión",
+      photo: "https://github.com/JoseDarioGonzalezCha.png",
+      name: "Jose Gonzalez",
+      job: "Dev FullStack",
+    },
   ]);
 
   //Ternario => conidcion ? seMuestra : noSeMuestra
@@ -28,6 +58,11 @@ function App() {
     console.log("New partner", partner);
     // Spread Operator
     updatePartners([...partners, partner]);
+  };
+
+  // Remove partner
+  const removePartner = () => {
+    console.log("Remove partner");
   };
 
   // Team List
@@ -83,6 +118,7 @@ function App() {
           data={team}
           key={team.title}
           partners={partners.filter((partner) => partner.team === team.title)}
+          removePartner={removePartner}
         />
       ))}
       <Footer />

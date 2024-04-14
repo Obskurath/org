@@ -1,6 +1,7 @@
 .partner {
     width: 280px;
     margin-bottom: 24px;
+    position: relative;
 }
 
 .partner .header {
@@ -40,4 +41,16 @@
     padding: 0 24px;
     font-weight: 400;
     margin: 0;
+}
+
+.delete-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.delete-icon:hover {
+    color: red;
+    transition: ease-in-out 100ms;
 }
