@@ -4,7 +4,7 @@ import TextField from "../TextField";
 import OptionList from "../OptionList";
 import Button from "../Button";
 
-const Form = () => {
+const Form = (props) => {
   const [name, updateName] = useState("");
   const [job, updateJob] = useState("");
   const [photo, updatePhoto] = useState("");
@@ -52,6 +52,7 @@ const Form = () => {
           placeholder="Seleccione su equipo"
           value={team}
           updateTeam={updateTeam}
+          teams={props.teams}
         />
         <Button title="Crear" />
       </form>

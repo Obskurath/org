@@ -1,16 +1,6 @@
 import "./OptionList.css";
 
 const OptionList = (props) => {
-  const teams = [
-    "Programación",
-    "Front End",
-    "Data Science",
-    "DevOps",
-    "UX/UI",
-    "Móvil",
-    "Innovación y Gestión",
-  ];
-
   const handleChange = (e) => {
     console.log(e.target.value);
     props.updateTeam(e.target.value);
@@ -23,7 +13,7 @@ const OptionList = (props) => {
         <option value="" disabled defaultValue="" hidden>
           Seleccionar equipo
         </option>
-        {teams.map((team, index) => {
+        {props.teams.map((team, index) => {
           return (
             <option key={index} value={team}>
               {team}

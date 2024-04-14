@@ -57,7 +57,7 @@ function App() {
     <div>
       <Header />
       <div className={`form-container ${showForm ? "show" : "hide"}`}>
-        <Form />
+        <Form teams={teams.map((team) => team.title)} />
       </div>
       <MiOrg changeShow={changeShow} />
 
