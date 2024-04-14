@@ -10,6 +10,8 @@ const Form = (props) => {
   const [photo, updatePhoto] = useState("");
   const [team, updateTeam] = useState("");
 
+  const { addPartner } = props;
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -19,7 +21,7 @@ const Form = (props) => {
       photo,
       team,
     };
-    console.log(dataToSend);
+    addPartner(dataToSend);
   };
 
   return (

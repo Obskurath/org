@@ -4,14 +4,30 @@ import Header from "./components/Header";
 import Form from "./components/Form";
 import MiOrg from "./components/MiOrg";
 import Team from "./components/Team";
+import Footer from "./components/Footer";
 
 function App() {
   const [showForm, updateShow] = useState(false);
+  const [partners, updatePartners] = useState([
+    {
+      team: "DevOps",
+      photo: "https://github.com/obskurath.png",
+      name: "Eduardo Valencia",
+      job: "Estudiante",
+    },
+  ]);
 
   //Ternario => conidcion ? seMuestra : noSeMuestra
 
   const changeShow = () => {
     updateShow(!showForm);
+  };
+
+  //Add partner
+  const addPartner = (partner) => {
+    console.log("New partner", partner);
+    // Spread Operator
+    updatePartners([...partners, partner]);
   };
 
   // Team List
@@ -57,13 +73,19 @@ function App() {
     <div>
       <Header />
       <div className={`form-container ${showForm ? "show" : "hide"}`}>
-        <Form teams={teams.map((team) => team.title)} />
+        <Form teams={teams.map((team) => team.title)} addPartner={addPartner} />
       </div>
+
       <MiOrg changeShow={changeShow} />
 
-      {teams.map((teams) => {
-        return <Team data={teams} key={teams.title} />;
-      })}
+      {teams.map((team) => (
+        <Team
+          data={team}
+          key={team.title}
+          partners={partners.filter((partner) => partner.team === team.title)}
+        />
+      ))}
+      <Footer />
     </div>
   );
 }
