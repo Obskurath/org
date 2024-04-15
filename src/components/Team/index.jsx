@@ -15,14 +15,6 @@ const Team = (props) => {
     <>
       {partners.length > 0 && (
         <section className="team" style={obj}>
-          <input
-            type="color"
-            className="input-color"
-            value={primaryColor}
-            onChange={(evento) => {
-              updateColor(evento.target.value, id);
-            }}
-          />
           <h3 style={titleStyle}>{title}</h3>
           <div className="partners">
             {partners.map((partner, index) => (
