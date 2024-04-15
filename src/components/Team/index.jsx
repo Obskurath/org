@@ -3,8 +3,8 @@ import Partner from "../Partner";
 import hexToRgba from "hex-to-rgba";
 
 const Team = (props) => {
-  const { primaryColor, secondaryColor, title, id } = props.data;
-  const { partners, removePartner, like, updateColor } = props;
+  const { primaryColor, title } = props.data;
+  const { partners, removePartner, like } = props;
   const obj = {
     backgroundColor: hexToRgba(primaryColor, 0.4),
   };
