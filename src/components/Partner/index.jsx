@@ -2,13 +2,16 @@ import "./Partner.css";
 import { MdDeleteForever } from "react-icons/md";
 
 const Partner = (props) => {
-  const { name, job, photo, team } = props.data;
+  const { name, job, photo, team, id } = props.data;
   const { primaryColor, removePartner } = props;
   return (
     <div className="partner">
       <div className="header" style={{ backgroundColor: primaryColor }}>
         <img src={photo} alt={name} />
-        <MdDeleteForever onClick={removePartner} className="delete-icon" />
+        <MdDeleteForever
+          onClick={() => removePartner(id)}
+          className="delete-icon"
+        />
       </div>
       <div className="info">
         <h4>{name}</h4>
