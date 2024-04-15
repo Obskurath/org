@@ -37,13 +37,7 @@ const Form = (props) => {
 
   const handleNewTeam = (e) => {
     e.preventDefault();
-
-    let dataToSend = {
-      title,
-      color,
-    };
-
-    addTeam(dataToSend);
+    addTeam({ title, primaryColor: color });
   };
 
   const toggleForm = () => {

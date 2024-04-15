@@ -6,7 +6,6 @@ import Form from "./components/Form";
 import MiOrg from "./components/MiOrg";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
-import hexToRgba from "hex-to-rgba";
 
 function App() {
   const [showForm, updateShow] = useState(false);
@@ -71,6 +70,7 @@ function App() {
   const updateColor = (color, id) => {
     console.log("Update color", color, id);
     const newTeams = teams.map((team) => {
+      // Cambiar teams por team
       if (team.id === id) {
         team.primaryColor = color;
       }
@@ -143,9 +143,7 @@ function App() {
   // Create team
   const addTeam = (newTeam) => {
     console.log(newTeam);
-    const primaryColorRgba = hexToRgba(newTeam.color, "0.3");
-    console.log("Color transformado:", primaryColorRgba);
-    updateTeams([...teams, { ...newTeam, primaryColorRgba, id: uuidv4() }]);
+    updateTeams([...teams, { ...newTeam, id: uuidv4() }]);
   };
 
   // Like partner
@@ -182,7 +180,7 @@ function App() {
           key={team.title}
           partners={partners.filter((partner) => partner.team === team.title)}
           removePartner={removePartner}
-          updateColor={updateColor}
+          updateColor={(color, id) => updateColor(color, id)}
           like={like}
           color={team.primaryColor}
         />

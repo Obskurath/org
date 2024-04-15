@@ -1,13 +1,12 @@
 import "./Team.css";
 import Partner from "../Partner";
-import hexToRgba from "hex-to-rgba"; // Add missing import statement
+import hexToRgba from "hex-to-rgba";
 
 const Team = (props) => {
-  const { primaryColor, title, id, color } = props.data;
+  const { primaryColor, secondaryColor, title, id } = props.data;
   const { partners, removePartner, like, updateColor } = props;
-
   const obj = {
-    backgroundColor: hexToRgba(primaryColor, "0.3"),
+    backgroundColor: hexToRgba(primaryColor, 0.6),
   };
 
   const titleStyle = { borderColor: primaryColor };
@@ -18,13 +17,12 @@ const Team = (props) => {
         <section className="team" style={obj}>
           <input
             type="color"
-            value={hexToRgba(primaryColor, "0.3")}
-            onChange={(e) => {
-              console.log(e.target.value);
-              updateColor(e.target.value, title, id);
+            className="input-color"
+            value={primaryColor}
+            onChange={(evento) => {
+              updateColor(evento.target.value, id);
             }}
           />
-
           <h3 style={titleStyle}>{title}</h3>
           <div className="partners">
             {partners.map((partner, index) => (
