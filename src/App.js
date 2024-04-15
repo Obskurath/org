@@ -164,6 +164,8 @@ function App() {
   return (
     <div>
       <Header />
+      <MiOrg changeShow={changeShow} />
+
       <div className={`form-container ${showForm ? "show" : "hide"}`}>
         <Form
           teams={teams.map((team) => team.title)}
@@ -171,8 +173,6 @@ function App() {
           addTeam={addTeam}
         />
       </div>
-
-      <MiOrg changeShow={changeShow} />
 
       {teams.map((team) => (
         <Team
