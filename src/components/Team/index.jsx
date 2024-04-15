@@ -3,7 +3,7 @@ import Partner from "../Partner";
 
 const Team = (props) => {
   const { primaryColor, secondaryColor, title } = props.data;
-  const { partners, removePartner } = props;
+  const { partners, removePartner, like } = props;
 
   const obj = {
     backgroundColor: secondaryColor,
@@ -23,6 +23,7 @@ const Team = (props) => {
                 key={index}
                 primaryColor={primaryColor}
                 removePartner={removePartner}
+                like={like}
               />
             ))}
           </div>

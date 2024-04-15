@@ -1,11 +1,53 @@
 .form {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 80px 0;
 }
 
+.form-partner {
+    position: relative;
+}
+
+.add-team-icon {
+    position: absolute;
+    top: 5%;
+    right: 4%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+
+.add-team-icon:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.1s;
+    color: #007bff;
+}
+
+.form-team {
+    height: fit-content;
+    position: relative;
+
+
+}
+
+.add-partner-icon {
+    position: absolute;
+    top: 7%;
+    right: 4%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.add-partner-icon:hover {
+    transform: scale(1.1);
+    transition: ease-in-out 0.1s;
+    color: #007bff;
+}
+
 .form form {
-    /* max-width: 80%; */
+
     width: 930px;
     background-color: #f7f7f7;
     box-shadow: 7px 7px 15px rgba(0, 0, 0, 15%);

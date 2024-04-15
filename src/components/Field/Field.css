@@ -1,16 +1,16 @@
-.text-field {
+.field {
     margin: 24px 0;
     font-family: 'Montserrat Variable', sans-serif;
 }
 
-.text-field label {
+.field label {
     font-family: 'Montserrat Variable', sans-serif;
     font-size: 18px;
     font-weight: 400;
     display: block;
 }
 
-.text-field input {
+.field input {
     width: 100%;
     border: none;
     height: 80px;
@@ -21,4 +21,9 @@
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.04);
     color: #A4A4A4;
     box-sizing: border-box;
+}
+
+.field-color input {
+    height: 40px;
+    padding: 5px 20px;
 }

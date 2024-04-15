@@ -16,6 +16,7 @@ function App() {
       name: "Eduardo Valencia",
       job: "Estudiante",
       id: uuidv4(),
+      fav: true,
     },
     {
       team: "Front End",
@@ -23,6 +24,7 @@ function App() {
       name: "Harland Lohora",
       job: "Instructor",
       id: uuidv4(),
+      fav: false,
     },
     {
       team: "Programación",
@@ -30,6 +32,7 @@ function App() {
       name: "Jean Marie",
       job: "Desarrolladora de software e instructora",
       id: uuidv4(),
+      fav: false,
     },
     {
       team: "UX y Diseño",
@@ -37,6 +40,7 @@ function App() {
       name: "Jeanmarie Quijada",
       job: "Instructora en Alura Latam",
       id: uuidv4(),
+      fav: false,
     },
     {
       team: "Programación",
@@ -44,6 +48,7 @@ function App() {
       name: "Christian Velasco",
       job: "Head de Alura e Instructor",
       id: uuidv4(),
+      fav: false,
     },
     {
       team: "Innovación y Gestión",
@@ -51,6 +56,7 @@ function App() {
       name: "Jose Gonzalez",
       job: "Dev FullStack",
       id: uuidv4(),
+      fav: false,
     },
   ]);
 
@@ -75,7 +81,7 @@ function App() {
   };
 
   // Team List
-  const teams = [
+  const [teams, updateTeams] = useState([
     {
       title: "Programación",
       primaryColor: "#57C278",
@@ -118,13 +124,38 @@ function App() {
       secondaryColor: "#FFEEDF",
       id: uuidv4(),
     },
-  ];
+  ]);
+
+  // Create team
+  const addTeam = (newTeam) => {
+    console.log(newTeam);
+    updateTeams([...teams, { ...newTeam, id: uuidv4() }]);
+  };
+
+  // Like partner
+  const like = (id) => {
+    console.log("Like", id);
+    const newPartners = partners.map((partner) => {
+      if (partner.id === id) {
+        return {
+          ...partner,
+          fav: !partner.fav,
+        };
+      }
+      return partner;
+    });
+    updatePartners(newPartners);
+  };
 
   return (
     <div>
       <Header />
       <div className={`form-container ${showForm ? "show" : "hide"}`}>
-        <Form teams={teams.map((team) => team.title)} addPartner={addPartner} />
+        <Form
+          teams={teams.map((team) => team.title)}
+          addPartner={addPartner}
+          addTeam={addTeam}
+        />
       </div>
 
       <MiOrg changeShow={changeShow} />
@@ -135,6 +166,7 @@ function App() {
           key={team.title}
           partners={partners.filter((partner) => partner.team === team.title)}
           removePartner={removePartner}
+          like={like}
         />
       ))}
       <Footer />
